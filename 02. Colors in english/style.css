@@ -5,6 +5,7 @@
 
 body {
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 div {
@@ -23,7 +24,7 @@ div {
 .purple {background-color: purple;}
 .pink {background-color: pink;}
 .grey {background-color: grey;}
-.brown {background-color: brown;}
+.brown {background-color: #562401;}
 .black {background-color: black;}
 .none {
 	text-align: center;
@@ -48,5 +49,5 @@ div:hover:not(.none) {
 .purple:hover {box-shadow: 0 0 10px 4px purple;}
 .pink:hover {box-shadow: 0 0 10px 4px pink;}
 .grey:hover {box-shadow: 0 0 10px 4px grey;}
-.brown:hover {box-shadow: 0 0 10px 4px brown;}
+.brown:hover {box-shadow: 0 0 10px 4px #562401;}
 .black:hover {box-shadow: 0 0 10px 4px black;}
