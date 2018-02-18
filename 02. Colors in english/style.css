@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:700');
+
+* {
+}
+
+body {
+	margin: 0 auto;
+}
+
+div {
+	height: 33.33vh;
+	width: 25%;
+	float: left;
+	transition: 0.6s;
+}
+
+.white {background-color: white;}
+.yellow {background-color: yellow;}
+.orange {background-color: orange;}
+.red {background-color: red;}
+.green {background-color: green;}
+.blue {background-color: blue;}
+.purple {background-color: purple;}
+.pink {background-color: pink;}
+.grey {background-color: grey;}
+.brown {background-color: brown;}
+.black {background-color: black;}
+.none {
+	text-align: center;
+	line-height: 30vh;
+	background: linear-gradient(yellow, red, blue);
+	color: white;
+	font-size: 75px;
+	font-family: 'Dancing Script', cursive;
+	text-shadow: 0 0 20px #000;
+}
+
+div:hover:not(.none) {
+	transform: scale(1.05);
+}
+
+.white:hover {box-shadow: 0 0 10px 4px white;}
+.yellow:hover {box-shadow: 0 0 10px 4px yellow;}
+.orange:hover {box-shadow: 0 0 10px 4px orange;}
+.red:hover {box-shadow: 0 0 10px 4px red;}
+.green:hover {box-shadow: 0 0 10px 4px green;}
+.blue:hover {box-shadow: 0 0 10px 4px blue;}
+.purple:hover {box-shadow: 0 0 10px 4px purple;}
+.pink:hover {box-shadow: 0 0 10px 4px pink;}
+.grey:hover {box-shadow: 0 0 10px 4px grey;}
+.brown:hover {box-shadow: 0 0 10px 4px brown;}
+.black:hover {box-shadow: 0 0 10px 4px black;}
