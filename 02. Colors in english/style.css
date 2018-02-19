@@ -48,6 +48,7 @@ div {
 div:hover {
 	transform: scale(1.02);
 	z-index: 1;
+	cursor: pointer;
 }
 
 .white:hover {box-shadow: 0 0 10px 4px white;}
