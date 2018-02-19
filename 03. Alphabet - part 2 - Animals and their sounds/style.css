@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Nanum+Pen+Script');
+
+* {
+	box-sizing: border-box;
+	/*outline: 1px solid red;*/
+}
+
+body {
+	background-color: black;
+	text-align: center;
+	margin: 0;
+	margin-top:8px; 
+}
+
+[class*="img-"] {
+	width: 24%;
+	height: 31vh;
+	margin: 3px;
+	text-align: center;
+	display: inline-block;
+	border-radius: 10px;
+	position: relative;
+	box-shadow: inset 0 0 5px black;
+	transition: opacity 0.3s;
+	opacity: 0.6;
+}
+
+[class="img-dolphin"] {
+	background: url(img/dolphin.jpeg) center/cover no-repeat;
+	width: 48%;
+}
+[class="img-hyena"] {
+	background: url(img/hyena.jpg) center/cover no-repeat;
+}
+[class="img-jaguar"] {
+	background: url(img/jaguar.jpeg) top/cover no-repeat;
+}
+[class="img-killer-whale"] {
+	background: url(img/killer-whale.jpg) center/cover no-repeat;
+}
+[class="img-lion"] {
+	background: url(img/lion.jpeg) center/cover no-repeat;
+	width: 48%;
+}
+[class="img-owl"] {
+	background: url(img/owl.jpeg) center/cover no-repeat;
+}
+[class="img-rhino"] {
+	background: url(img/rhino.jpeg) center/cover no-repeat;
+}
+[class="img-seal"] {
+	background: url(img/seal.jpg) center/cover no-repeat;
+}
+[class="img-zebra"] {
+	background: url(img/zebra.jpeg) center/cover no-repeat;
+	width: 48%;
+}
+
+
+.key {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 80px;
+	width: 80px;
+	text-align: center;
+	line-height: 70px;
+	background-color: #576574CC; 
+	transition: all 0.35s;
+	border: 5px solid white;
+	border-radius: 10px;
+	margin: 0;
+	opacity: 0.7;
+	font-size: 2.5rem;
+	color: #FFF;
+	text-shadow: 0 0 2px #000;
+	font-family: 'Nanum Pen Script', cursive;
+	font-size: 60px;
+	text-transform: uppercase;
+}
+.key-pressed {
+  	transform: translate(-50%, -50%) scale(1.1);
+  	border-color: #2ed573;
+  	box-shadow: 0 0 1rem #2ed573;
+  	color: #2ed573;
+  	opacity: 1;
+}
+
+.zebra {
+	font-family: 'Gloria Hallelujah', cursive;
+	font-size: 35px;
+}
