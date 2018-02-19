@@ -82,9 +82,9 @@ body {
 }
 .key-pressed {
   	transform: translate(-50%, -50%) scale(1.1);
-  	border-color: #2ed573;
-  	box-shadow: 0 0 1rem #2ed573;
-  	color: #2ed573;
+  	border-color: blue;
+  	box-shadow: 0 0 1rem blue;
+  	color: blue;
   	opacity: 1;
 }
 
