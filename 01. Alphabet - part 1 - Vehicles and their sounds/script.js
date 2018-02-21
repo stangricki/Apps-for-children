@@ -4,18 +4,10 @@ function removeTransition(e) {
 }
 
 function playSound(e) {
-	const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-	const keyMotorboat = document.querySelector(`.motorboat`);
-	const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+	const keyCode = e.altKey && e.keyCode === 76 ? '76 18' : e.keyCode;
+	const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
+	const key = document.querySelector(`div[data-key="${keyCode}"]`);
 	
-	// ALT + L - LITERA Ł - Łódka
-	if(e.altKey === true && e.keyCode === 76) { 
-		document.querySelector(`audio[class="motorboat"]`).play();
-		keyMotorboat.classList.add('key-pressed');
-		keyMotorboat.parentNode.style.opacity = 1; // adds full OPACITY on Motorboat image
-		setTimeout(function(){keyMotorboat.parentNode.style.opacity = 0.6}, 3100); // removes full OPACITY from Motorboat image
-	}
-
 	if(!audio){return};
 	key.classList.add('key-pressed');
 	key.parentNode.style.opacity = 1; // adds full OPACITY on an image
