@@ -7,8 +7,8 @@ document.addEventListener('click', (e) => {
 // Usage of Web speech API - No support for IE and Opera
 
 document.addEventListener('click', (e) => {
-	let color = new SpeechSynthesisUtterance(e.target.className);
 	let chooseVoice = window.speechSynthesis.getVoices();
+	let color = new SpeechSynthesisUtterance(e.target.className);
 	color.voice = chooseVoice[4] // Why first click is default voice???
 	window.speechSynthesis.speak(color);
 })
