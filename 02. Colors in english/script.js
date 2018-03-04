@@ -13,8 +13,8 @@ function handleClickInOtherBrowsers(e){ //Usage of mp3 if there is NO 'speechSyn
 	e.target.querySelector("audio").play()
 }
 
-function removeDefaultVoice(){
-	var speech_voices; // removes asynchronous call to load the voices (default voice at first click)
+function removeDefaultVoice(){ // removes asynchronous call to load the voices (default voice at first click)
+	var speech_voices; 
 	if ('speechSynthesis' in window) {
 	  speech_voices = window.speechSynthesis.getVoices();
 	  window.speechSynthesis.onvoiceschanged = function() {
