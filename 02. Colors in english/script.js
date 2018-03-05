@@ -1,10 +1,9 @@
 (function() {
-	document.addEventListener(
-		'click',
-		'speechSynthesis' in window
-			? playSynth
-			: playAudio
-	);
+	document.addEventListener('click', playAudio);
+	if ('speechSynthesis' in window) {
+		window.speechSynthesis.getVoices();
+		window.speechSynthesis.addEventListener('voiceschanged', initSynth);
+	}
 
 	function playSynth(e) {
 		let chooseVoice = window.speechSynthesis.getVoices();
@@ -17,10 +16,8 @@
 		e.target.querySelector("audio").play();
 	}
 
-	function init() {
-		// Ensure that the voices are loaded by the time we need them
-		window.speechSynthesis.getVoices();
+	function initSynth() {
+		document.removeEventListener('click', playAudio);
+		document.addEventListener('click', playSynth);
 	}
-
-	init();
 }());
