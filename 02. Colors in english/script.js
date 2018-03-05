@@ -1,26 +1,26 @@
 {
-	let voice;
-	let play = playAudio;
-	const handleClick = e => play(e);
-	document.addEventListener('click', handleClick);
+	const audio = {
+		play(e) { e.target.querySelector("audio").play() }
+	};
 
-	if ('speechSynthesis' in window) {
-		window.speechSynthesis.getVoices();
-		window.speechSynthesis.addEventListener('voiceschanged', initSynth);
+	const synth = {
+		init(callback) {
+			window.speechSynthesis.getVoices();
+			window.speechSynthesis.addEventListener('voiceschanged', () => {
+				this.voice = window.speechSynthesis.getVoices()[4];
+				callback();
+			});
+		},
+		play(e) {
+			const utterance = new SpeechSynthesisUtterance(e.target.className);
+			utterance.voice = this.voice;
+			window.speechSynthesis.speak(utterance);
+		}
 	}
 
-	function playSynth(e) {
-		const utterance = new SpeechSynthesisUtterance(e.target.className);
-		utterance.voice = voice;
-		window.speechSynthesis.speak(utterance);
-	}
-		
-	function playAudio(e) {
-		e.target.querySelector("audio").play();
-	}
-
-	function initSynth() {
-		voice = window.speechSynthesis.getVoices()[4];
-		play = playSynth;
+	{
+		let player = audio;
+		document.addEventListener('click', e => player.play(e));
+		if ('speechSynthesis' in window) synth.init(() => player = synth);
 	}
 }
