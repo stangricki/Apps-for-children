@@ -1,6 +1,6 @@
 {
 	const audio = {
-		play(e) { e.target.querySelector("audio").play() }
+		handleClick(e) { e.target.querySelector("audio").play() }
 	};
 
 	const synth = {
@@ -11,7 +11,7 @@
 				callback();
 			});
 		},
-		play(e) {
+		handleClick(e) {
 			const utterance = new SpeechSynthesisUtterance(e.target.className);
 			utterance.voice = this.voice;
 			window.speechSynthesis.speak(utterance);
@@ -20,7 +20,7 @@
 
 	{
 		let player = audio;
-		document.addEventListener('click', e => player.play(e));
+		document.addEventListener('click', e => player.handleClick(e));
 		if ('speechSynthesis' in window) synth.init(() => player = synth);
 	}
 }
