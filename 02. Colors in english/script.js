@@ -1,6 +1,6 @@
 document.addEventListener('click', (e) => {
-	('speechSynthesis' in window) ?	handleClick(e) : handleClickInOtherBrowsers(e)
-})
+	('speechSynthesis' in window) ?	handleClick(e) : handleClickInOtherBrowsers(e);
+});
 
 function handleClick(e) { // Usage of Web speech API - No support for IE and Opera
 	let chooseVoice = window.speechSynthesis.getVoices();
@@ -9,18 +9,12 @@ function handleClick(e) { // Usage of Web speech API - No support for IE and Ope
 	window.speechSynthesis.speak(color);
 }
 	
-function handleClickInOtherBrowsers(e){ //Usage of mp3 if there is NO 'speechSynthesis' in window
-	e.target.querySelector("audio").play()
+function handleClickInOtherBrowsers(e) { //Usage of mp3 if there is NO 'speechSynthesis' in window
+	e.target.querySelector("audio").play();
 }
 
-function removeDefaultVoice(){ // removes asynchronous call to load the voices (default voice at first click)
-	var speech_voices; 
-	if ('speechSynthesis' in window) {
-	  speech_voices = window.speechSynthesis.getVoices();
-	  window.speechSynthesis.onvoiceschanged = function() {
-	    speech_voices = window.speechSynthesis.getVoices();
-	  };
-	}
+function removeDefaultVoice() { // Ensures that the voices are loaded by the time we need them
+	window.speechSynthesis.getVoices();
 }
 
-removeDefaultVoice()
+removeDefaultVoice();
