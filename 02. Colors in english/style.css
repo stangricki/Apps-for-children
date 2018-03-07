@@ -39,10 +39,11 @@ div {
 	    radial-gradient(ellipse farthest-corner at 100% 100%, #EA2027, rgba(0, 0, 0, 0)), 
 	    linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
 	color: white;
-	font-size: 75px;
+	font-size: 5rem;
 	font-family: 'Dancing Script', cursive;
 	text-shadow: 0 0 20px #000;
 	box-shadow: inset 0 0 10px white;
+	position: relative;
 }
 
 div:hover {
@@ -64,3 +65,27 @@ div:hover {
 .brown:hover {box-shadow: 0 0 10px 4px #562401;}
 .black:hover {box-shadow: 0 0 10px 4px black;}
 .colors:hover{box-shadow: 0 0 10px 4px white;}
+
+.sayColorGameButton {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	font-family: 'Dancing Script', cursive;
+	border: none;
+	font-size: 1.2rem;
+	box-shadow: 0 0 1px 1px #FFF;
+}
+
+.sayColorGameButton:focus {
+	outline: none;
+}
+
+.sayColorGameButton:hover {
+	background-color: #fff;
+	transition: all 0.6s;
+	box-shadow: 0 0 3px 1px #FFF;
+	text-shadow: 0 0 3px #333;
+}
