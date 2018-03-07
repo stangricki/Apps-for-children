@@ -1,26 +1,26 @@
-document.addEventListener('click', (e) => {
-	('speechSynthesis' in window) ?	handleClick(e) : handleClickInOtherBrowsers(e)
-})
+{
+	const audio = {
+		handleClick(e) { e.target.querySelector("audio").play() }
+	};
 
-function handleClick(e) { // Usage of Web speech API - No support for IE and Opera
-	let chooseVoice = window.speechSynthesis.getVoices();
-	let color = new SpeechSynthesisUtterance(e.target.className);
-	color.voice = chooseVoice[4];
-	window.speechSynthesis.speak(color);
-}
-	
-function handleClickInOtherBrowsers(e){ //Usage of mp3 if there is NO 'speechSynthesis' in window
-	e.target.querySelector("audio").play()
-}
+	const synth = {
+		init(callback) {
+			window.speechSynthesis.getVoices();
+			window.speechSynthesis.addEventListener('voiceschanged', () => {
+				this.voice = window.speechSynthesis.getVoices()[4];
+				callback();
+			});
+		},
+		handleClick(e) {
+			const utterance = new SpeechSynthesisUtterance(e.target.className);
+			utterance.voice = this.voice;
+			window.speechSynthesis.speak(utterance);
+		}
+	}
 
-function removeDefaultVoice(){ // removes asynchronous call to load the voices (default voice at first click)
-	var speech_voices; 
-	if ('speechSynthesis' in window) {
-	  speech_voices = window.speechSynthesis.getVoices();
-	  window.speechSynthesis.onvoiceschanged = function() {
-	    speech_voices = window.speechSynthesis.getVoices();
-	  };
+	{
+		let player = audio;
+		document.addEventListener('click', e => player.handleClick(e));
+		if ('speechSynthesis' in window) synth.init(() => player = synth);
 	}
 }
-
-removeDefaultVoice()
