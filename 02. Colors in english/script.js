@@ -24,3 +24,9 @@ function removeDefaultVoice(){ // removes asynchronous call to load the voices (
 }
 
 removeDefaultVoice()
+
+// GAME
+function sayColorGame() {
+	let randomColor = Math.random()
+	console.log(randomColor)
+}
