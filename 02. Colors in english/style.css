@@ -66,7 +66,7 @@ div:hover {
 .black:hover {box-shadow: 0 0 10px 4px black;}
 .colors:hover{box-shadow: 0 0 10px 4px white;}
 
-.sayColorGameButton {
+/* .sayColorGameButton {
 	position: absolute;
 	right: 15px;
 	top: 15px;
@@ -88,4 +88,4 @@ div:hover {
 	transition: all 0.6s;
 	box-shadow: 0 0 3px 1px #FFF;
 	text-shadow: 0 0 3px #333;
-}
+} */
